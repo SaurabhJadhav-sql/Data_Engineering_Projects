@@ -1,2 +1,11 @@
-Practicing Daily Data Engineering 
-Practicing Daily ETL Logic 
+#ETL Pipline Practice
+##Features
+-Extract data from MySQL
+-Transform using Python
+-Clean Salary Data
+-Categorize Employees
+
+##Tech
+-Python
+-Pandas
+-MySQL
