@@ -17,7 +17,6 @@ This pipeline:
 |------|---------|
 | Python 3.12 | Core programming language |
 | Pandas | Data manipulation & cleaning |
-| NumPy | Conditional column creation |
 | SQLAlchemy | Database connection |
 | MySQL | Data storage |
 | VS Code | Development environment |
@@ -78,7 +77,7 @@ Etl_Pipeline.py
 
 ### 1. Install Requirements
 ```bash
-pip install pandas numpy sqlalchemy pymysql
+pip install pandas  sqlalchemy pymysql
 ```
 
 ### 2. Setup MySQL
