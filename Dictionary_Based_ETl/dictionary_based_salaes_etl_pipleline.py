@@ -49,7 +49,7 @@ def load(df):
               index = False)
     
         print("Data Successfully Loaded")
-except Exception as e:
+    except Exception as e:
         print(f"Error loading the data {e}")
 
 data = Etl()
