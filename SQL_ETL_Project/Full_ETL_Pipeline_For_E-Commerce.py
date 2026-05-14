@@ -59,11 +59,16 @@ def Load(df):
         "mysql+pymysql://root:root@localhost:3306/Ecommerce_etl"
     )
 
-    df.to_sql("Clean_Data",conn,
+    try:
+
+        df.to_sql("Clean_Data",conn,
               if_exists = "replace",
               index = False)
     
-    print("Data Sucessfully loaded")
+        print("Data Sucessfully loaded")
+    except Exception as e:
+
+        print(f"Data Loading error {e}")
 
 Customers,Orders,Order_Items,Products = Extract()
 
