@@ -79,15 +79,15 @@ def load(df):
 
     try:
 
-    df.to_sql("Retail_Analytics",conn,
+       df.to_sql("Retail_Analytics",conn,
               if_exists = "replace",
               index = False)
     
-    print("Data is Loaded Successfully.")
+        print("Data is Loaded Successfully.")
 
-except Expection as e:
+    except Exception as e:
 
-    print(f"Error loading data: {e}")
+        print(f"Error loading data: {e}")
 
 Cust_Clean,Ord_Clean,Ord_item_Clean,Prod_Clean = extract()
 
