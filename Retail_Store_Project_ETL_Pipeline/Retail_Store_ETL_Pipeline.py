@@ -79,7 +79,7 @@ def load(df):
 
     try:
 
-       df.to_sql("Retail_Analytics",conn,
+        df.to_sql("Retail_Analytics",conn,
               if_exists = "replace",
               index = False)
     
@@ -96,6 +96,9 @@ Clean = transform(Cust_Clean,Ord_Clean,Ord_item_Clean,Prod_Clean)
 Loaded = load(Clean)
 
 print(Clean)
+
+
+
 
 
 
