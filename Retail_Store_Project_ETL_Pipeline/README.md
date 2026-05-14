@@ -36,7 +36,6 @@ Using:
 
 ```python
 pd.read_csv()
-
 🔧 2. Transform Phase
 👥 Customer Transformations
 
@@ -47,7 +46,6 @@ pd.read_csv()
 Young
 Mid
 Senior
-
 🛍️ Product Transformations
 
 ✔️ Filled missing selling prices
@@ -55,7 +53,6 @@ Senior
 
 Profit Margin
 Profit Percentage
-
 📦 Order Transformations
 
 ✔️ Filtered only delivered orders
@@ -69,9 +66,8 @@ Profit Percentage
 Total Values
 Tax
 Final Amount
-
 🧠 Business Logic Implemented
- 💰 Order Classification
+💰 Order Classification
 
 Orders are categorized as:
 
@@ -104,7 +100,6 @@ To calculate:
 
 Order totals
 Revenue analytics
-
 🔗 Data Merging
 
 Merged multiple datasets using:
@@ -118,7 +113,6 @@ Similar to SQL JOIN operations.
 The final transformed dataset is loaded into a MySQL database using:
 
 to_sql()
-
 🚀 Skills Demonstrated
 
 ✅ ETL Pipeline Development
@@ -133,7 +127,6 @@ to_sql()
 ✅ SQL Concepts
 
 📌 Features Created
-
 Feature	Description
 Profit_Margin	Product profit calculation
 Profit_Percent	Profit percentage
@@ -142,9 +135,7 @@ Tax	Tax calculation
 Final_Amount	Final payable amount
 Order_Size	High/Medium/Low order classification
 Customer_Label	VIP/Regular customer classification
-
 📈 Future Improvements
-
 ⚠️ Add exception handling
 📝 Add logging system
 🔐 Use environment variables for credentials
@@ -165,6 +156,5 @@ Successfully built a beginner-friendly real-world ETL pipeline capable of:
 👨‍💻 Author
 Saurabh Jadhav
 
-🚀 Aspiring Cloud Data Engineer
-     
+🚀 Aspiring Cloud Data Engineer 
      
