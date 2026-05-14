@@ -23,7 +23,7 @@ def transform(Customers,Orders,Order_items,Products):
 
     Customers["City"] = Customers["City"].str.capitalize()
 
-    Customers["Age_Group"] = Customers["Age"].apply(lambda x: "Young" if x < 30  else "MId" if x < 40 else "Senior")
+    Customers["Age_Group"] = Customers["Age"].apply(lambda x: "Young" if x < 30  else "Middle" if x < 40 else "Senior")
 
     Products["Selling_Price"] = Products["Selling_Price"].fillna(Products["Selling_Price"].mean())
 
@@ -39,7 +39,7 @@ def transform(Customers,Orders,Order_items,Products):
 
     Order_items["Total_Values"] = Order_items["Unit_Price"] * Order_items["Quantity"]
 
-    Order_items["Tax"] = Order_items["Total_Values"] + 0.18
+    Order_items["Tax"] = Order_items["Total_Values"] * 0.18
 
     Order_items["Final_Amount"] = Order_items["Total_Values"] + Order_items["Tax"]
 
@@ -77,12 +77,17 @@ def load(df):
         "mysql+pymysql://root:root@localhost:3306/practice"
     )
 
+    try:
+
     df.to_sql("Retail_Analytics",conn,
               if_exists = "replace",
               index = False)
     
     print("Data is Loaded Successfully.")
 
+except Expection as e:
+
+    print(f"Error loading data: {e}")
 
 Cust_Clean,Ord_Clean,Ord_item_Clean,Prod_Clean = extract()
 
