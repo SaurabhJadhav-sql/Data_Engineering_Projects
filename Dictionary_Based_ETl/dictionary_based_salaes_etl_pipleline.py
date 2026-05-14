@@ -42,11 +42,15 @@ def load(df):
         "mysql+pymysql://root:root@localhost:3306/practice"
     )
 
-    df.to_sql("Clean_Orders",enginee,
+    try:
+
+       df.to_sql("Clean_Orders",enginee,
               if_exists = "replace",
               index = False)
     
-    print("Data Successfully Loaded")
+        print("Data Successfully Loaded")
+except Exception as e:
+        print(f"Error loading the data {e}")
 
 data = Etl()
 
