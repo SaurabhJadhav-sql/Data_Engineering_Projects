@@ -22,12 +22,11 @@ features and finally loads the data into MySQl Database.
 
 # 💠ETL Flow
 
-##📥 Extract Phase
+#📥 Extract Phase
 
 This Pipeline extracts multiple CSV files
 
 -1) Patients
-
 -2) Doctors
 -3) Appointments
 -4) Billing
@@ -40,24 +39,24 @@ pd.read_csv()
 
 # 🔧 Transform Phase
 
-##👥 Patients Transformation
+###👥 Patients Transformation
 
 -✔️ Filled Missing Insurance Status with "Unknown".
 -✔️ Standardize the Patients Names.
 -✔️ Categorize patients based on there age.
 
-##👩🏻‍⚕️ Doctors Transformation
+###👩🏻‍⚕️ Doctors Transformation
 
 -✔️ Filled Missing Consultation Fee with "Average fee".
 -✔️ Standardize the Doctor Names.
 -✔️ Categorize doctors based on Experience.
 
-##📅 Appointments
+###📅 Appointments
 
 -✔️ Filled Missing payments mode with "Not Provided"
 -✔️ Filter the data according to status.
 
-##💳 Billings
+###💳 Billings
 
 -✔️  Filled Missing medicine cost with `0`.
 -✔️ Calculated:
