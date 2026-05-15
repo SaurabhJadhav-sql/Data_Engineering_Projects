@@ -79,9 +79,9 @@ def transform(patients,doctors,appointements,billings):
                       on = "Appointment_ID",
                       how = "inner")
         
-        df["Patient_Category"] = df["Final_Bill"].apply(lambda x: "VIP" if x > 15000 else "Regula")     #Categorize patients based on final bill
+        df["Patient_Category"] = df["Final_Bill"].apply(lambda x: "VIP" if x > 15000 else "Regular")     #Categorize patients based on final bill
 
-        df["Insurance Type"] = df["Insurance_Status"].apply(lambda x: "Insured" if x == "Active" else "Inactive" if x == "Inactive" else "No Insurance")   # Create insurance category from insurance status
+        df["Insurance_Type"] = df["Insurance_Status"].apply(lambda x: "Insured" if x == "Active" else "Inactive" if x == "Inactive" else "No Insurance")   # Create insurance category from insurance status
 
         Total_Revenue = df["Final_Bill"].sum()   #Calculate total hospital revenue
         print(Total_Revenue)
