@@ -1,10 +1,10 @@
----
+
 #📋 Project Overview
 
 This project display complete ETL process (Extract , Transform And Load) for hospital management system.Build it using python,pandas and MySQL.
+
 In this project pipeline extracts the data from multiple CSV files and perform data cleaning,business transformation and merges the datasets creates analytics 
 features and finally loads the data into MySQl Database.
----
 
 ---
 #💻 Tools Required
@@ -19,11 +19,13 @@ features and finally loads the data into MySQl Database.
 |💻 VS Code | Developement Environment |
 ---
 
----
+
 # 💠ETL Flow
 
 ##📥 Extract Phase
+
 This Pipeline extracts multiple CSV files
+
 -1) Patients
 -2) Doctors
 -3) Appointments
@@ -33,6 +35,7 @@ Using:
 ```bash
 pd.read_csv()
 ```
+---
 
 # 🔧 Transform Phase
 
@@ -57,20 +60,20 @@ pd.read_csv()
 
 -✔️  Filled Missing medicine cost with `0`.
 -✔️ Calculated:
-       -1) Total Bill. ✅
-       -2) Discount Amount. ✅
-       -3) Final Bill ✅
-       -4) Total Revenue ✅
-       -5) Revenue by Departments ✅
----
+-1) Total Bill. ✅
+-2) Discount Amount. ✅
+-3) Final Bill ✅
+-4) Total Revenue ✅
+-5) Revenue by Departments ✅
 
 ---
+
 ##🛡️ Error Handling
 
 Use `try` `except` and `finally` for handaling errors and avoiding the pipeline crash.
----
 
 ---
+
 # 🚀 How to run Project
 
 ##1) Instal Required
@@ -89,6 +92,7 @@ Use `try` `except` and `finally` for handaling errors and avoiding the pipeline 
     ``` sql
      SELECT * FROM hospital_Data;
     ```   
+    
 ---
 
 
