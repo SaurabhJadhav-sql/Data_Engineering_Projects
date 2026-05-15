@@ -1,6 +1,9 @@
+#Import Pandas ,Numpy and sqlalchemy
+
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
+
 #Extract Data From MySQl
 def Extract():
 
@@ -19,13 +22,15 @@ def Extract():
 
     return Customers,Orders,Order_Items,Products
 
+#Transforming the data by using pandas (pd) and numpy (np)
+
 def Cleaning(Customers,Orders,Order_Items,Products):
 
-    Customers["Email"] = Customers["Email"].fillna("not_provided@gmail.com")
+    Customers["Email"] = Customers["Email"].fillna("not_provided@gmail.com")  #Using pandas fillna function to set perticular value to null Emails
 
-    Customers["City"] = Customers["City"].str.title()
+    Customers["City"] = Customers["City"].str.title()   #Capitalizing the City names by using pandas function title()
 
-    Products["Stock"] = Products["Stock"].fillna(0)
+    Products["Stock"] = Products["Stock"].fillna(0)   #Giving 0 value to the empty stock.
 
     df = pd.merge(Customers,Orders,
                   on = "Customer_ID",
@@ -39,19 +44,22 @@ def Cleaning(Customers,Orders,Order_Items,Products):
                   on = "Product_ID",
                   how = "inner")
     
-    df["Total_Values"] = df["Price"] * df["Quantity"]
+    df["Total_Values"] = df["Price"] * df["Quantity"]  #Caluclating the total_values by product price and the quantity 
 
-    df["Tax"] = df["Total_Values"]*0.18
+    df["Tax"] = df["Total_Values"]*0.18  #Calculated the Tax by using column Total_value and multipling the value by 0.18 to add tax on each product of 18%
 
-    df["Final_Value"] = df["Total_Values"] + df["Tax"]
+    df["Final_Value"] = df["Total_Values"] + df["Tax"]  #Calculating the final value by total value + tax 
 
-    df = df[df["Status"] == "delivered"]
+    df = df[df["Status"] == "delivered"] #Displaying only those data that are delivered
 
-    df["Order_Size"] = np.where(df["Total_Values"] > 100000,"High", np.where(df["Total_Values"] > 50000,"Medium","Low"))
+    df["Order_Size"] = np.where(df["Total_Values"] > 100000,"High", np.where(df["Total_Values"] > 50000,"Medium","Low")) #Use Numpy np conditional statement to categorize the order size into high medium or low based on total values
 
     
     
     return df
+
+#load the data into sql
+
 def Load(df):
 
     conn = create_engine(
