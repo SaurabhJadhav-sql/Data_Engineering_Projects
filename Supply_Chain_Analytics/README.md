@@ -225,17 +225,6 @@ SELECT * FROM supply_chain_analytics;
 - Merging multiple DataFrames with suffix handling
 - Loading transformed data to MySQL using SQLAlchemy
 
----
-
-## 🗺️ What's Next
-
-- [ ] Add Apache Airflow for pipeline scheduling
-- [ ] Deploy to AWS/GCP cloud
-- [ ] Add data validation layer
-- [ ] Build dashboard using Power BI / Tableau
-- [ ] Implement PySpark for large-scale data
-
----
 
 ## 👨‍💻 About Me
 
