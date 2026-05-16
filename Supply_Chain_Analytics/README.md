@@ -69,6 +69,7 @@ analytics-ready data with business KPIs.
 | Profit_Margin | Selling - Cost | Calculated column |
 | Profit_Percent | Margin/Cost × 100 | Calculated column |
 | Stock_Status | Reorder check | `apply(lambda)` |
+| Status | Drop_Column | `drop(column_name)` |
 
 ### 🛒 Purchase Orders
 | Step | Action | Method |
@@ -77,6 +78,7 @@ analytics-ready data with business KPIs.
 | Missing Quality | Fill with "Pending" | `fillna()` |
 | Missing Unit_Price | Fill with mean | `fillna(mean())` |
 | Delivery_Status | On Time/Delayed/Not Delivered | `apply(lambda)` |
+| Status | Drop_Column | `drop(column_name)` |
 
 ### 🏗️ Production
 | Step | Action | Method |
@@ -85,6 +87,7 @@ analytics-ready data with business KPIs.
 | Missing Production_Cost | Fill with mean | `fillna(mean())` |
 | Defect_Rate | Defects/Quantity × 100 | `np.where()` |
 | Quality_Grade | Excellent/Good/Needs Improvement | `apply(lambda)` |
+| Status | Drop_Column | `drop(column_name)` |
 
 ---
 
